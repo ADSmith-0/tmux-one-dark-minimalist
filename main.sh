@@ -32,7 +32,7 @@ get_branch() {
   if [ $length -ge $max_length ]; then
     echo "$git_icons $(echo $result | head -c $(($max_length - 3)))..."
   else
-    echo "$git_icons $(pad "$result" -$max_length)"
+    echo "$(pad "$git_icons $result" -$max_length)"
   fi
 }
 
@@ -40,14 +40,14 @@ get_session() {
   result=$(tmux display-message -p '#S')
   length=$(echo $result | tr -d '\n' | wc -m)
   if [ $length -ge $max_length ]; then
-    echo "$tmux_icons ...$(echo $result | tail -c $(($max_length - 3)))"
+    echo "...$(echo $result | tail -c $(($max_length - 3))) $tmux_icon"
   else
-    echo "$(pad "$tmux_icon $result" $max_length)"
+    echo "$(pad "$result $tmux_icon" $max_length)"
   fi
 }
 
 # Tmux session
-tmux set-window-option -g status-right "#[fg=${session}] $(get_session) "
+tmux set-window-option -g status-right "#[fg=${session}] $(get_session)  "
 # Git branch
 tmux set-window-option -g status-left " #[fg=${git}]  $(get_branch)"
 tmux set-window-option -g window-status-format " #[fg=${flags}]#{?window_flags,#{window_flags},}#[fg=${unselected_fg}]#I:#W "
