@@ -16,7 +16,7 @@ unselected_fg=${white}
 git=${green}
 session=${cyan}
 
-max_length=20
+max_length=30
 
 tmux_icon=""
 git_icons=" "
