@@ -1,0 +1,1 @@
+# tmux-one-dark-minimalist
