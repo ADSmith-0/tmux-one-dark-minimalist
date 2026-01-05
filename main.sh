@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# Taken from here: https://stackoverflow.com/a/72068155/6515818
-pad() {
-  [ "$#" -gt 1 ] && [ -n "$2" ] && printf "%$2.${2#-}s" "$1";
-}
-
 # Taken from here: https://github.com/2KAbhishek/tmux2k/blob/main/lib/utils.sh
 get_tmux_option() {
     local option=$1
@@ -38,35 +33,14 @@ unselected_fg=$(get_tmux_option "@tmux-one-dark-unselected-fg" "${white}")
 git=$(get_tmux_option "@tmux-one-dark-git" "${green}")
 session=$(get_tmux_option "@tmux-one-dark-session" "${cyan}")
 
-get_branch() {
-  result=$(git branch --show-current)
-  length=$(echo $result | tr -d '\n' | wc -m)
-  if [ $length -ge $max_length ]; then
-    echo "$git_icon $(echo $result | head -c $(($max_length - 3)))..."
-  else
-    echo "$(pad "$git_icon $result" -$max_length)"
-  fi
-}
-
-get_session() {
-  result=$(tmux display-message -p '#S')
-  length=$(echo $result | tr -d '\n' | wc -m)
-  if [ $length -ge $max_length ]; then
-    echo "...$(echo $result | tail -c $(($max_length - 3))) $tmux_icon"
-  else
-    echo "$(pad "$result $tmux_icon" $max_length)"
-  fi
-}
-
-
-tmux set-option -g status-interval 5
+tmux set-option -g status-interval 3
 tmux set-option -g status-style "bg=default"
 tmux set-window-option -g status-left-length 99
 tmux set-window-option -g status-right-length 99
 tmux set-window-option -g status-justify centre
 # Tmux session
-tmux set-window-option -g status-right "#[fg=${session}] $(get_session)  "
+tmux set-window-option -g status-right "#[fg=${session}] #(~/.tmux/plugins/tmux-one-dark-minimalist/plugins/session.sh)  "
 # Git branch
-tmux set-window-option -g status-left "  #[fg=${git}] $(get_branch)"
+tmux set-window-option -g status-left "  #[fg=${git}] #(~/.tmux/plugins/tmux-one-dark-minimalist/plugins/git.sh)"
 tmux set-window-option -g window-status-format " #[fg=${flags}]#{?window_flags,#{window_flags},}#[fg=${unselected_fg}]#I:#W "
 tmux set-window-option -g window-status-current-format "#[fg=${selected_bg},bg=default]#[fg=${selected_fg},bg=${selected_bg}]#{?window_flags,#{window_flags},}#I:#W#[fg=${selected_bg},bg=default]"
