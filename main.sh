@@ -58,6 +58,11 @@ get_session() {
   fi
 }
 
+
+tmux set-window-option -g status-style "bg=default"
+tmux set-window-option -g status-left-length 99
+tmux set-window-option -g status-right-length 99
+tmux set-window-option -g status-justify centre
 # Tmux session
 tmux set-window-option -g status-right "#[fg=${session}] $(get_session)  "
 # Git branch
