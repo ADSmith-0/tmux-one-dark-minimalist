@@ -59,7 +59,8 @@ get_session() {
 }
 
 
-tmux set-window-option -g status-style "bg=default"
+tmux set-option -g status-interval 5
+tmux set-option -g status-style "bg=default"
 tmux set-window-option -g status-left-length 99
 tmux set-window-option -g status-right-length 99
 tmux set-window-option -g status-justify centre
