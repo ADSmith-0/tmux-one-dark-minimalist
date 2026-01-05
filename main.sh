@@ -20,7 +20,7 @@ get_tmux_option() {
 max_length=30
 
 tmux_icon=""
-git_icons=" "
+git_icon=""
 
 black=$(get_tmux_option "@tmux-one-dark-black" '#282c34')
 red=$(get_tmux_option "@tmux-one-dark-red" '#ef596f')
@@ -42,9 +42,9 @@ get_branch() {
   result=$(git branch --show-current)
   length=$(echo $result | tr -d '\n' | wc -m)
   if [ $length -ge $max_length ]; then
-    echo "$git_icons $(echo $result | head -c $(($max_length - 3)))..."
+    echo "$git_icon $(echo $result | head -c $(($max_length - 3)))..."
   else
-    echo "$(pad "$git_icons $result" -$max_length)"
+    echo "$(pad "$git_icon $result" -$max_length)"
   fi
 }
 
@@ -66,6 +66,6 @@ tmux set-window-option -g status-justify centre
 # Tmux session
 tmux set-window-option -g status-right "#[fg=${session}] $(get_session)  "
 # Git branch
-tmux set-window-option -g status-left " #[fg=${git}]  $(get_branch)"
+tmux set-window-option -g status-left "  #[fg=${git}] $(get_branch)"
 tmux set-window-option -g window-status-format " #[fg=${flags}]#{?window_flags,#{window_flags},}#[fg=${unselected_fg}]#I:#W "
 tmux set-window-option -g window-status-current-format "#[fg=${selected_bg},bg=default]#[fg=${selected_fg},bg=${selected_bg}]#{?window_flags,#{window_flags},}#I:#W#[fg=${selected_bg},bg=default]"
