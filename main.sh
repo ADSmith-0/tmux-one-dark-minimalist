@@ -1,30 +1,42 @@
 #!/usr/bin/env bash
 
-black='#282c34'
-red='#ef596f'
-green='#89ca78'
-yellow='#e5c07b'
-blue='#61afef'
-magenta='#d55fde'
-cyan='#2bbac5'
-white='#ffffff'
+# Taken from here: https://stackoverflow.com/a/72068155/6515818
+pad() {
+  [ "$#" -gt 1 ] && [ -n "$2" ] && printf "%$2.${2#-}s" "$1";
+}
 
-selected_bg=${yellow}
-selected_fg=${black}
-flags=${red}
-unselected_fg=${white}
-git=${green}
-session=${cyan}
+# Taken from here: https://github.com/2KAbhishek/tmux2k/blob/main/lib/utils.sh
+get_tmux_option() {
+    local option=$1
+    local default_value=$2
+    local option_value=$(tmux show-option -gqv "$option")
+    if [ -z "$option_value" ]; then
+        echo $default_value
+    else
+        echo $option_value
+    fi
+}
 
 max_length=30
 
 tmux_icon=""
 git_icons=" "
 
-# Taken from here: https://stackoverflow.com/a/72068155/6515818
-pad() {
-  [ "$#" -gt 1 ] && [ -n "$2" ] && printf "%$2.${2#-}s" "$1";
-}
+black=$(get_tmux_option "@tmux-one-dark-black" '#282c34')
+red=$(get_tmux_option "@tmux-one-dark-red" '#ef596f')
+green=$(get_tmux_option "@tmux-one-dark-green" '#89ca78')
+yellow=$(get_tmux_option "@tmux-one-dark-yellow" '#e5c07b')
+blue=$(get_tmux_option "@tmux-one-dark-blue" '#61afef')
+magenta=$(get_tmux_option "@tmux-one-dark-magenta" '#d55fde')
+cyan=$(get_tmux_option "@tmux-one-dark-cyan" '#2bbac5')
+white=$(get_tmux_option "@tmux-one-dark-white" '#ffffff')
+
+selected_bg=$(get_tmux_option "@tmux-one-dark-selected-bg" "${yellow}")
+selected_fg=$(get_tmux_option "@tmux-one-dark-selected-fg" "${black}")
+flags=$(get_tmux_option "@tmux-one-dark-flags" "${red}")
+unselected_fg=$(get_tmux_option "@tmux-one-dark-unselected-fg" "${white}")
+git=$(get_tmux_option "@tmux-one-dark-git" "${green}")
+session=$(get_tmux_option "@tmux-one-dark-session" "${cyan}")
 
 get_branch() {
   result=$(git branch --show-current)
