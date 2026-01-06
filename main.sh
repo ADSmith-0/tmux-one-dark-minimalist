@@ -41,8 +41,8 @@ tmux set-option -g status-left-length 99
 tmux set-option -g status-right-length 99
 tmux set-option -g status-justify centre
 # Tmux session
-tmux set-option -g status-right '#[fg=#{@session}] #{=/-20/...:session_name}   '
+tmux set-option -g status-right '#[fg=#{@session}] #{p-30:#{=/-27/...:session_name}}    '
 # Git branch
-tmux set-option -g status-left '  #[fg=#{@git}]  #{=/20/...:#(git -C "#{pane_current_path}" rev-parse --abbrev-ref HEAD)}'
+tmux set-option -g status-left '  #[fg=#{@git}]  #{p30:#{=/27/...:#(git -C "#{pane_current_path}" rev-parse --abbrev-ref HEAD)}}'
 tmux set-window-option -g window-status-format ' #[fg=#{@flags}]#{?window_flags,#{window_flags},}#[fg=#{@unselected_fg}]#I:#W '
 tmux set-window-option -g window-status-current-format '#[fg=#{@selected_bg},bg=default]#[fg=#{@selected_fg},bg=#{@selected_bg}]#{?window_flags,#{window_flags},}#I:#W#[fg=#{@selected_bg},bg=default]'
