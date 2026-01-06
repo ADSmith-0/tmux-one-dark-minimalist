@@ -40,6 +40,11 @@ tmux set-option -g status-style "bg=default"
 tmux set-option -g status-left-length 99
 tmux set-option -g status-right-length 99
 tmux set-option -g status-justify centre
+
+# To explain the code below
+# #{p<num>:<val>} - pads by the value by the number of spaces (makes sure it will always be the same length). - is to the left, + is to the right. This is to make sure that the window-format is always centered
+# #{=/<num>/...:<val>} - truncates the value by the number, i.e. if <val> is longer than <num> it will truncate to be <num>. - takes the end, + takes the beginning. If the value it truncated it appends what is after the / in this case "..."
+
 # Tmux session
 tmux set-option -g status-right '#[fg=#{@session}] #{p-30:#{=/-27/...:session_name}}    '
 # Git branch
