@@ -17,7 +17,7 @@ With very long project or git branch names, they will be truncated past 30 chara
 <img width="1916" height="40" alt="Screenshot showing truncation" src="https://github.com/user-attachments/assets/8644b49b-4a29-43be-96a0-450816dc8fb2" />
 
 ### Variables
-You can change the colours you want with variables in your tmux config, you could theoretically make this apply to any theme that you want
+You can change the colours with variables in your tmux config, you could theoretically make this apply to any theme that you want
 
 In your `.tmux.conf`:
 ```shell
