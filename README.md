@@ -14,7 +14,8 @@ set -g @plugin 'ADSmith-0/tmux-one-dark-minimalist'
 ### Truncation
 With very long session names or git branch names, they will be truncated past 30 characters
 
-<img width="1916" height="40" alt="Screenshot showing truncation" src="https://github.com/user-attachments/assets/8644b49b-4a29-43be-96a0-450816dc8fb2" />
+<img width="1916" height="40" alt="Screenshot from 2026-01-30 23-03-32" src="https://github.com/user-attachments/assets/25aedceb-15a5-4ecb-b6f7-1b92d317f7dc" />
+
 
 ### Variables
 You can change the colours with variables in your tmux config, you could theoretically make this apply to any theme that you want
