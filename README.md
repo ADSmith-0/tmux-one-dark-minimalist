@@ -1,7 +1,7 @@
 # Tmux one dark minimalist
 A minimalist theme for tmux with the one dark colour scheme
 
-<img width="1903" height="109" alt="Screenshot from 2026-01-30 01-11-23" src="https://github.com/user-attachments/assets/8bfe20a4-36f5-45da-ad8c-da9370ed73d9" />
+<img width="1903" height="109" alt="Screenshot showing the theme" src="https://github.com/user-attachments/assets/8bfe20a4-36f5-45da-ad8c-da9370ed73d9" />
 
 ## Installation
 - [`tpm`](https://github.com/tmux-plugins/tpm?tab=readme-ov-file#tmux-plugin-manager) needs to be installed
@@ -13,6 +13,8 @@ set -g @plugin 'ADSmith-0/tmux-one-dark-minimalist'
 ## Features
 ### Truncation
 With very long project or git branch names, they will be truncated past 30 characters so that the styling remains consistent
+
+<img width="1916" height="40" alt="Screenshot showing truncation" src="https://github.com/user-attachments/assets/8644b49b-4a29-43be-96a0-450816dc8fb2" />
 
 ### Variables
 You can change the colours you want with variables in your tmux config, you could theoretically make this apply to any theme that you want
@@ -46,4 +48,4 @@ In your `.tmux.conf`:
 set -g @tmux-one-dark-selected-bg "red"
 ```
 
-<img width="1903" height="109" alt="Screenshot from 2026-01-30 01-12-15" src="https://github.com/user-attachments/assets/1afc0962-19df-44a3-9e33-6bcf9b42653a" />
+<img width="1903" height="109" alt="Screenshot showing a different colour" src="https://github.com/user-attachments/assets/1afc0962-19df-44a3-9e33-6bcf9b42653a" />
