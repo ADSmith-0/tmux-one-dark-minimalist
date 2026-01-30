@@ -37,8 +37,9 @@ Variables
 @tmux-one-dark-session # default cyan
 ```
 
-e.g. If you want the background of the bubble at the top to be red you would say
+In your `.tmux.conf`:
 ```shell
 set -g @tmux-one-dark-selected-bg "red"
 ```
+
 <img width="1903" height="109" alt="Screenshot from 2026-01-30 01-12-15" src="https://github.com/user-attachments/assets/1afc0962-19df-44a3-9e33-6bcf9b42653a" />
