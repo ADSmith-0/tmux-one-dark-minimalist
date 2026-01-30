@@ -1,5 +1,5 @@
 # Tmux one dark minimalist
-A minimalist theme for tmux with the one dark colour scheme
+A minimalist theme for tmux using the one dark colour scheme
 
 <img width="1903" height="109" alt="Screenshot showing the theme" src="https://github.com/user-attachments/assets/8bfe20a4-36f5-45da-ad8c-da9370ed73d9" />
 
