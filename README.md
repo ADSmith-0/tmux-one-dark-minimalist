@@ -1,6 +1,8 @@
 # Tmux one dark minimalist
 A minimalist theme for tmux with the one dark colour scheme
 
+<img width="1903" height="109" alt="Screenshot from 2026-01-30 01-11-23" src="https://github.com/user-attachments/assets/8bfe20a4-36f5-45da-ad8c-da9370ed73d9" />
+
 ## Installation
 - [`tpm`](https://github.com/tmux-plugins/tpm?tab=readme-ov-file#tmux-plugin-manager) needs to be installed
 - Add this line to your `.tmux.conf`
@@ -39,5 +41,4 @@ e.g. If you want the background of the bubble at the top to be red you would say
 ```shell
 set -g @tmux-one-dark-selected-bg "red"
 ```
-
-result:
+<img width="1903" height="109" alt="Screenshot from 2026-01-30 01-12-15" src="https://github.com/user-attachments/assets/1afc0962-19df-44a3-9e33-6bcf9b42653a" />
