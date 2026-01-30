@@ -10,7 +10,11 @@ A minimalist theme for tmux with the one dark colour scheme
 set -g @plugin 'ADSmith-0/tmux-one-dark-minimalist'
 ```
 
-## Variables
+## Features
+### Truncation
+With very long project or git branch names, they will be truncated past 30 characters so that the styling remains consistent
+
+### Variables
 You can change the colours you want with variables in your tmux config, you could theoretically make this apply to any theme that you want
 
 In your `.tmux.conf`:
